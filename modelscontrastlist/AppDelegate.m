@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ModelContrastViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    UINavigationController * rootNav = [[UINavigationController alloc]initWithRootViewController:[[ModelContrastViewController alloc]init]];
+    self.window.rootViewController = rootNav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
